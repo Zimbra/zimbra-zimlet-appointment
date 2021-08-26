@@ -34,7 +34,7 @@ function createMore(props, context) {
          setEvent({
             tabId: props.tabId,
             eventData: {
-               notes: 'Body text can be set here ' + zimletStrings.dialInText + ' ' + this.props.notes,
+               notes: 'Body text can be set here ' + zimletStrings.dialInText + ' ' + props.notes,
                isFormDirty: true
             }
          })
