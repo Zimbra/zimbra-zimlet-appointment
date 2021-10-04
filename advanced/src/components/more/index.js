@@ -1,7 +1,8 @@
 import { createElement, Component, render } from 'preact';
 import { compose } from 'recompose';
 import { withIntl } from '../../enhancers';
-import { Text } from 'preact-i18n';
+import { useState, useCallback, useMemo, useContext } from 'preact/hooks';
+import { Text, IntlProvider, Localizer, IntlContext } from 'preact-i18n';
 import style from './style';
 import { Button } from '@zimbra-client/blocks';
 
@@ -10,11 +11,10 @@ function createMore(props, context) {
       <span class={style.appIcon}>
       </span>);
 
-   //By importing withIntl the json translations from the intl folder are loaded into context, can we can access them directly, or use <Text...
-   const zimletStrings = context.intl.dictionary['zimbra-zimlet-appointment-location'];
+   const { intl } = useContext(IntlContext)
+   const zimletStrings = intl.dictionary['zimbra-zimlet-appointment-location'];
 
    const handleClick = (e) => {
-      //console.log(this.props);
       //handleLocationChange is a method passed (via props) to the Zimlet slot that allows you to set the location of the appointment
       props.handleLocationChange({ value: ['A location (https://yourVideoConferenceApp.example.coms) can be inserted here'] });
 
