@@ -4,7 +4,7 @@ import style from './style';
 import { Button } from '@zimbra-client/blocks';
 import { withText } from 'preact-i18n';
 
-/* Depends: https://github.com/ZimbraOS/zm-x-web/pull/2963 */
+/* Depends: https://github.com/Zimbra/zm-x-web/pull/2963 */
 
 @withIntl()
 @withText({
